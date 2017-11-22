@@ -9,6 +9,8 @@ RUN \
       maxscale \
   && \
   apt-get clean && \
-  rm -rf /var/lib/apt/lists/
+  rm -rf /var/lib/apt/lists/ \
+  && \
+  mkdir -v /etc/maxscale.cnf.d/
 
 ENTRYPOINT [ "maxscale", "--nodaemon", "--syslog=no", "--log=stdout" ]
