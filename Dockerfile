@@ -1,4 +1,3 @@
-
 FROM pataquets/ubuntu:xenial
 
 RUN \
@@ -12,6 +11,8 @@ RUN \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/ \
   && \
+  echo "# This configuration file is intentionally empty. See 'maxscale.cnf.d' dir." | \
+    tee /etc/maxscale.cnf && \
   mkdir -v /etc/maxscale.cnf.d/
 
 ENTRYPOINT [ "maxscale", "--nodaemon", "--syslog=no", "--log=stdout" ]
