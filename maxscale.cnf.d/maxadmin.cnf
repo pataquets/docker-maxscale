@@ -1,0 +1,7 @@
+# This service enables the use of the MaxAdmin interface
+# MaxScale administration guide:
+# https://github.com/mariadb-corporation/MaxScale/blob/2.1/Documentation/Reference/MaxAdmin.md
+[MaxAdmin]
+type=service
+router=cli
+

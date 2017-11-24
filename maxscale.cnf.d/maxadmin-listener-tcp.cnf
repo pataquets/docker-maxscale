@@ -1,0 +1,7 @@
+[MaxAdmin Internet Listener]
+type=listener
+service=MaxAdmin
+protocol=maxscaled
+address=0.0.0.0
+port=6603
+

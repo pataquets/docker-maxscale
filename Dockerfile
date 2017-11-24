@@ -15,4 +15,6 @@ RUN \
     tee /etc/maxscale.cnf && \
   mkdir -v /etc/maxscale.cnf.d/
 
+COPY ./maxscale.cnf.d/* /etc/maxscale.cnf.d/
+
 ENTRYPOINT [ "maxscale", "--nodaemon", "--syslog=no", "--log=stdout" ]
