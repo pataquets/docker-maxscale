@@ -2,7 +2,9 @@ FROM pataquets/ubuntu:xenial
 
 RUN \
   apt-key adv --keyserver hkp://hkps.pool.sks-keyservers.net --recv-keys CE1A3DD5E3C94F49 && \
-  echo "deb http://downloads.mariadb.com/MaxScale/latest/ubuntu xenial main" > /etc/apt/sources.list.d/mariadb.list && \
+  . /etc/lsb-release && \
+  echo "deb http://downloads.mariadb.com/MaxScale/latest/ubuntu ${DISTRIB_CODENAME} main" | \
+    tee /etc/apt/sources.list.d/mariadb.list && \
   apt-get update && \
   DEBIAN_FRONTEND=noninteractive \
     apt-get install -y \
